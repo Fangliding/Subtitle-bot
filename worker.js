@@ -168,7 +168,7 @@ async function sendPlainText (chatId, text) {
  */
 function onMessage (message) {
   if (message.text.startsWith('/start') || message.text.startsWith('/help')) {
-    return sendPlainText(message.chat.id, 'Poweby ACCEED Technology')}
+    return sendPlainText(message.chat.id, 'Powerby ACCEED Technology.\nSource: https://github.com/Fangliding/Subtitle-bot\nAuthor: @Fangliding')}
 }
 
 /**

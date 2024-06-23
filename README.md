@@ -1,6 +1,9 @@
 # Subtitle-bot
-返回随机台词的 tg inline bot
+返回随机台词的 tg inline bot 支持搜索
+
 示例 bot @rabbit_zh_subtitle_test_bot 
+
+创意来源 @mygo_zh_subtitle_bot (基本完全复刻，除了请求是每次都随机)
 
 ## 如何使用
 
