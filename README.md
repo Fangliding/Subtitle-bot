@@ -3,6 +3,8 @@
 
 示例 bot @rabbit_zh_subtitle_test_bot 
 
+更多作者的池沼示例: @kon_zh_subtitle_bot @mlp_zh_subtitle_bot @madoka_zh_subtitle_bot 
+
 创意来源 @mygo_zh_subtitle_bot (基本完全复刻，除了请求是每次都随机)
 
 ## 如何使用
