@@ -12880,60 +12880,64 @@
 {Dear My Sister}就好像？
 {Dear My Sister}第二个家一样
 {Dear My Sister}欢迎光临 欢迎来到Rabbit House
-{Daydream café}内心小兔乱撞地等待？
-{Daydream café}假装在想着什么　再向你靠近一点点
-{Daydream café}才不会简单地告诉你呢　喜欢你这件事是秘密来的
+{Daydream café}明明心如小兔在乱跳 却装作在沉思
+{Daydream café}再靠近我一点吧
+{Daydream café}不会这么轻易地说出口
+{Daydream café}不告诉你我最喜欢你
+{Daydream café}第一印象最重要 要矜持
+{Daydream café}心慌意乱 小兔乱跳 这是秘密哦
+{Daydream café}你那淘气的笑容总是让我心跳加速
+{Daydream café}一推开大门就是未知的世界
+{Daydream café}（才没那么回事）怎么可能啊
+{Daydream café}说不定真的有哦 看那纯白色的异次元
+{Daydream café}悄悄看了一眼（咖啡杯）
+{Daydream café}我在看着我自己
+{Daydream café}为什么？为什么？会有两个我呢？骗人的吧！
+{Daydream café}真是伤脑筋啊（就是） 我们喜欢的东西都一样（所以说）
+{Daydream café}你在注视着谁呢？（在看着你呀！）
+{Daydream café}我的眼里只有你哦
+{Daydream café}这只是梦 杯中之梦 一口气喝掉就结束了？
+{Daydream café}总是一蹦一蹦！
+{Daydream café}寻找各种乐趣　让心情再绽开一点点（怦怦的）
+{Daydream café}如果能永远和你在一起该多好啊！
+{Daydream café}希望你能亲口对我说（快点说吧）
+{Daydream café}明明心如小兔在乱跳 却装作在沉思
+{Daydream café}再靠近我一点吧（小兔乱跳）
+{Daydream café}不会这么轻易地说出口
+{Daydream café}不告诉你我最喜欢你（喜欢上你让我如此心动！）一定要保密哦
 {Daydream café}轻飘飘和心动是秘密哦
-{Daydream café}开头就是关键的　糟了糟了
-{Daydream café}轻飘飘和心动说了是秘密啦　用捉弄人的笑容让你心跳怦怦
-{Daydream café}推开门的瞬间　就来到未知的世界
-{Daydream café}（才没有这样的呢）不可能这样
-{Daydream café}那样也可能吧　比方说牛奶色的异次元
-{Daydream café}（咖啡杯）窥视其中的话
-{Daydream café}我看见了我自己
-{Daydream café}为什么？为什么？会有两个我呢？（不会吧！）
-{Daydream café}真让人困扰呢（一定）会是趣味相投（所以说）
-{Daydream café}是谁（在被看着呢？是你吧！）
-{Daydream café}我的眼里只有你哦（这么个梦　杯子的梦　那就一饮而尽吧？）
-{Daydream café}总是小兔乱撞的可能！
-{Daydream café}追求着快乐　让心情再绽开一点点（怦怦的）
-{Daydream café}和你一起就会非常美妙！
-{Daydream café}好想让你这么说出来（快点说吧）
-{Daydream café}内心小兔乱撞地等待？
-{Daydream café}假装在想着什么　再向你靠近一点点（怦怦地）
-{Daydream café}才不会简单地告诉你呢
-{Daydream café}喜欢你的这件事（喜欢我就是……哇哇哇！）是秘密来的
-{Daydream café}轻飘飘和心动是秘密哦
-{Daydream café}开头就是关键的　糟了糟了
-{Daydream café}轻飘飘和心动说了是秘密啦　用捉弄人的笑容让你心跳怦怦
-{Daydream café}日常之中也有　那不可思议的交叉点
-{Daydream café}（那样的话可能呢）有这个可能
-{Daydream café}从不可能的角度　切开的一块蛋糕
-{Daydream café}（流氓兔）被叫出来了
+{Daydream café}刚开始怎么能轻易认输的心高气傲
+{Daydream café}轻飘飘和心动怎么能说出口　用捉弄人的笑容让你心跳怦怦
+{Daydream café}即使不起眼是日常 也能有不可思议的邂逅
+{Daydream café}（这样也行嘛）有可能哦
+{Daydream café}从不存在的角度 切开的一块蛋糕
+{Daydream café}引来了不速之兔
 {Daydream café}我和 我都 惊呆了
-{Daydream café}为什么？为什么？会说话的兔子？（真的吗！）
-{Daydream café}好让人困扰哦（就先）喝口热热的茶（这样啊）
-{Daydream café}顺带（找到了哦关于你的）
-{Daydream café}关于我和你的命运
-{Daydream café}（梦真好呢 恋爱的梦 第一次的心动不已？）
-{Daydream café}内心在灿烂着高歌！
-{Daydream café}一边雀跃着　害羞地邀请着你（灿烂地）
-{Daydream café}和你一起就无敌啦！
-{Daydream café}已经无法掩饰真心话了（是真心话）
-{Daydream café}明天也灿烂的希望？
-{Daydream café}马上到来就好了　害羞地邀请着你（灿烂地）
+{Daydream café}连我都 我也是 惊呆在原地
+{Daydream café}怎么回事 怎么回事 会说话的兔子（真的吗？）
+{Daydream café}好让人困扰哦（就先）喝口热热的茶（这样）
+{Daydream café}竟无意间（找到了哦 通向你身边）
+{Daydream café}你我紧密相连的命运
+{Daydream café}这是场美梦 是奇幻的仙境 还有第一次心动
+{Daydream café}心儿在灿烂着高歌！
+{Daydream café}一边雀跃着 羞羞答答又跃跃欲试（心情灿烂）
+{Daydream café}和你一起的话 一定无人能敌
+{Daydream café}已经无法掩饰真心话了（是真心话哟）
+{Daydream café}未来充满灿烂希望
+{Daydream café}等不及快进到未来 羞答答地邀请着你（灿烂地）
 {Daydream café}只要一瞬间能在你耳边
-{Daydream café}囁く将其实是喜欢你（喜欢我啊就是说……什什什！）轻声道出
-{Daydream café}（这么个梦　杯子的梦　请你一饮而尽吧！）
-{Daydream café}总是小兔乱撞的可能！
-{Daydream café}追求着快乐 让心情再绽开一点点（怦怦的）
-{Daydream café}和你一起就会非常美妙！
-{Daydream café}好想让你这么说出来（快点说吧）
-{Daydream café}内心小兔乱撞地等待？
-{Daydream café}假装在想着什么　再向你靠近一点点（怦怦地）
-{Daydream café}才不会简单地告诉你呢　喜欢你这件事
+{Daydream café}说其实是一直喜欢我（喜欢你啊就是说……什什什！）（轻声耳语）
+{Daydream café}（这是场美梦 是杯中的奇幻 请你一饮而尽吧！）
+{Daydream café}这砰砰的心跳或许要伴我到永久
+{Daydream café}越跳越快乐 开心到小宇宙要爆炸（怦怦的）
+{Daydream café}和你一起一定非常美妙！
+{Daydream café}好希望你说给我听（快点说吧）
+{Daydream café}内心小兔在乱撞 期待又紧张
+{Daydream café}故作沉着 却还想再向你靠近一点点（怦怦地）
+{Daydream café}真心话怎能轻易坦白 对你心动不以
 {Daydream café}（梦真好呢 恋爱的梦 喜欢我啊就是说……什什什！）
 {Daydream café}是秘密来的
-{Daydream café}轻飘飘和心动是秘密哦
-{Daydream café}开头就是关键的　糟了糟了
-{Daydream café}轻飘飘和心动说了是秘密啦　用捉弄人的笑容 让你心跳怦怦
+{Daydream café}轻飘飘的心动怎么说得出口
+{Daydream café}刚开始心高心高气傲怎能轻易认输
+{Daydream café}轻飘飘和心动说了是秘密啦
+{Daydream café}用狡黠的笑容 让你心跳怦怦
