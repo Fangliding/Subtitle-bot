@@ -7,46 +7,49 @@ const WEBHOOK = '/endpoint'
 /**
  * 监听器
  */
-addEventListener('fetch', event => {
-  const url = new URL(event.request.url)
-  if (url.pathname === WEBHOOK) {
-    event.respondWith(handleWebhook(event))
-  } else if (url.pathname.toLowerCase() === '/registerwebhook') {
-    event.respondWith(registerWebhook(event, url, WEBHOOK, SECRET))
-  } else if (url.pathname.toLowerCase() === '/unregisterwebhook') {
-    event.respondWith(unRegisterWebhook(event))
-  } else {
-    event.respondWith(new Response('No handler for this request'+url.pathname))
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === WEBHOOK) {
+      return handleWebhook(request);
+    } else if (url.pathname.toLowerCase() === '/registerwebhook') {
+      return registerWebhook(request, url, WEBHOOK, SECRET);
+    } else if (url.pathname.toLowerCase() === '/unregisterwebhook') {
+      return unRegisterWebhook(request);
+    } else {
+      return new Response('No handler for this request: ' + url.pathname);
+    }
   }
-})
+}
 
 /**
  * 处理 WebHook
  */
-async function handleWebhook (event) {
+async function handleWebhook(request) {
   // Check secret
-  if (event.request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== SECRET) {
-    return new Response('Unauthorized', { status: 403 })
+  if (request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== SECRET) {
+    return new Response('Unauthorized', { status: 403 });
   }
 
-  // Read request body synchronously
-  const update = await event.request.json()
+  // Read request body
+  const update = await request.json();
   // Deal with response asynchronously
-  event.waitUntil(onUpdate(update))
+  await onUpdate(update);
 
-  return new Response('Ok')
+  return new Response('Ok');
 }
 
 /**
  * 处理机器人接收到的指令
  * https://core.telegram.org/bots/api#update
  */
-async function onUpdate (update) {
+async function onUpdate(update) {
   if ('message' in update) {
-    await onMessage(update.message)
+    await onMessage(update.message);
   }
-  if ('inline_query' in update) { // Add this line to handle inline queries
-    await onInlineQuery(update.inline_query)
+  if ('inline_query' in update) {
+    await onInlineQuery(update.inline_query);
   }
 }
 
@@ -54,23 +57,23 @@ async function onUpdate (update) {
  * 处理 inline query
  */
 async function onInlineQuery(inlineQuery) {
+  let lines = '';
   if (typeof SOURCE !== 'undefined') {
     const response = await fetch(SOURCE);
     lines = await response.text();
   }
-  var results = [];
-  var linesArray = lines.trim().split('\n').filter(line => line.trim() !== '');
-  
-  // 根据用户的查询字符串决定是随机抽取还是搜索
-  var query = inlineQuery.query.trim();
+  const results = [];
+  const linesArray = lines.trim().split('\n').filter(line => line.trim() !== '');
+
+  // 根据用户是否输入查询字符串决定随机还是搜索模式
+  const query = inlineQuery.query.trim();
 
   if (query) {
-    // 进行搜索
-    var matchedLines = linesArray.filter(line => line.includes(query)).slice(0, 50);
+    const matchedLines = linesArray.filter(line => line.includes(query)).slice(0, 50);
     matchedLines.forEach(line => {
-      var match = line.match(/{(.+?)}/);
-      var description = match ? match[1] : 'No description';
-      var content = line.replace(/{(.+?)}/, '').trim();
+      const match = line.match(/{(.+?)}/);
+      const description = match ? match[1] : 'No description';
+      const content = line.replace(/{(.+?)}/, '').trim();
 
       results.push({
         type: 'article',
@@ -83,12 +86,12 @@ async function onInlineQuery(inlineQuery) {
       });
     });
   } else {
-    // 随机抽取10行
-    var selectedLines = linesArray.sort(() => 0.5 - Math.random()).slice(0, 10);
+    // 随机抽取十行
+    const selectedLines = linesArray.sort(() => 0.5 - Math.random()).slice(0, 10);
     selectedLines.forEach(line => {
-      var match = line.match(/{(.+?)}/);
-      var description = match ? match[1] : 'No description';
-      var content = line.replace(/{(.+?)}/, '').trim();
+      const match = line.match(/{(.+?)}/);
+      const description = match ? match[1] : 'No description';
+      const content = line.replace(/{(.+?)}/, '').trim();
 
       results.push({
         type: 'article',
@@ -105,7 +108,7 @@ async function onInlineQuery(inlineQuery) {
   const data = {
     inline_query_id: inlineQuery.id,
     results: JSON.stringify(results),
-    cache_time: 1 // Set cache time to 1 second
+    cache_time: 1
   };
 
   return fetch(apiUrl('answerInlineQuery', data)).then(response => response.json());
@@ -114,9 +117,9 @@ async function onInlineQuery(inlineQuery) {
 //生成一个UUID 因为id需要一个随机值
 function generateUUID() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0;
-      var v = c === 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
   });
 }
 
@@ -124,51 +127,51 @@ function generateUUID() {
  * 设置 webhook
  * https://core.telegram.org/bots/api#setwebhook
  */
-async function registerWebhook (event, requestUrl, suffix, secret) {
-  // https://core.telegram.org/bots/api#setwebhook
-  const webhookUrl = `${requestUrl.protocol}//${requestUrl.hostname}${suffix}`
-  const r = await (await fetch(apiUrl('setWebhook', { url: webhookUrl, secret_token: secret }))).json()
-  return new Response('ok' in r && r.ok ? 'Ok' : JSON.stringify(r, null, 2))
+async function registerWebhook(request, requestUrl, suffix, secret) {
+  const webhookUrl = `${requestUrl.protocol}//${requestUrl.hostname}${suffix}`;
+  const r = await (await fetch(apiUrl('setWebhook', { url: webhookUrl, secret_token: secret }))).json();
+  return new Response('ok' in r && r.ok ? 'Ok' : JSON.stringify(r, null, 2));
 }
 
 /**
  * 注销 webhook
  * https://core.telegram.org/bots/api#setwebhook
  */
-async function unRegisterWebhook (event) {
-  const r = await (await fetch(apiUrl('setWebhook', { url: '' }))).json()
-  return new Response('ok' in r && r.ok ? 'Ok' : JSON.stringify(r, null, 2))
+async function unRegisterWebhook(request) {
+  const r = await (await fetch(apiUrl('setWebhook', { url: '' }))).json();
+  return new Response('ok' in r && r.ok ? 'Ok' : JSON.stringify(r, null, 2));
 }
 
 /**
  * 回复 telegram api
  */
-function apiUrl (methodName, params = null) {
-  let query = ''
+function apiUrl(methodName, params = null) {
+  let query = '';
   if (params) {
-    query = '?' + new URLSearchParams(params).toString()
+    query = '?' + new URLSearchParams(params).toString();
   }
-  return `https://api.telegram.org/bot${TOKEN}/${methodName}${query}`
+  return `https://api.telegram.org/bot${TOKEN}/${methodName}${query}`;
 }
 
 /**
  * 发送文本回复
  * https://core.telegram.org/bots/api#sendmessage
  */
-async function sendPlainText (chatId, text) {
+async function sendPlainText(chatId, text) {
   return (await fetch(apiUrl('sendMessage', {
     chat_id: chatId,
     text
-  }))).json()
+  }))).json();
 }
 
 /**
  * 处理 /start
  * https://core.telegram.org/bots/api#message
  */
-function onMessage (message) {
+async function onMessage(message) {
   if (message.text.startsWith('/start') || message.text.startsWith('/help')) {
-    return sendPlainText(message.chat.id, 'Powerby ACCEED Technology.\nSource: https://github.com/Fangliding/Subtitle-bot\nAuthor: @Fangliding')}
+    return sendPlainText(message.chat.id, 'Powerby ACCEED Technology.\nSource: https://github.com/Fangliding/Subtitle-bot\nAuthor: @Fangliding');
+  }
 }
 
 /**
