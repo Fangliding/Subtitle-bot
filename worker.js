@@ -57,7 +57,6 @@ async function onUpdate(update) {
  * 处理 inline query
  */
 async function onInlineQuery(inlineQuery) {
-  let lines = '';
   if (typeof SOURCE !== 'undefined') {
     const response = await fetch(SOURCE);
     lines = await response.text();
