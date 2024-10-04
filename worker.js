@@ -68,7 +68,7 @@ async function onInlineQuery(inlineQuery) {
   const query = inlineQuery.query.trim();
 
   if (query) {
-    const matchedLines = linesArray.filter(line => line.includes(query)).slice(0, 50);
+    const matchedLines = linesArray.filter(line => line.toLowerCase().includes(query.toLowerCase())).slice(0, 50);
     matchedLines.forEach(line => {
       const match = line.match(/{(.+?)}/);
       const description = match ? match[1] : 'No description';
